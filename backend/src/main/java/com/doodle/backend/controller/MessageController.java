@@ -23,7 +23,7 @@ public class MessageController {
     public ResponseEntity<List<Message>> getAllMessages() {
     try {
         List<Message> messageList = new ArrayList<>();
-        messageRepository.findAll().forEach(messageList::add);
+        messageRepository.findAllOrderByTimestampDesc().forEach(messageList::add);
         return new ResponseEntity<>(messageList, HttpStatus.OK);
      } catch (Exception exception) {
         return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
