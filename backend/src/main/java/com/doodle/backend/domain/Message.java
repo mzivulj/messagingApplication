@@ -19,7 +19,7 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name="senderName")
+    @Column(name="sender_name")
     private String senderName;
 
     @Column(name="message")
@@ -29,6 +29,7 @@ public class Message {
     @CreationTimestamp
     private Date timestamp;
 
+    @Column(name="status")
     private Status status;
 
     public Message(String senderName, String message, Status status) {

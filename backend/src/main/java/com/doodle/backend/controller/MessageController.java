@@ -20,7 +20,7 @@ public class MessageController {
 
     @MessageMapping("/message")
     @SendTo("/chatroom/public")
-    public Message receiveMessage(@Payload Message message){
+    public Message receiveMessage(@Payload Message message) {
         if (message.getStatus() == Status.MESSAGE) {
             Message newMsg = new Message(message.getSenderName(), message.getMessage(), message.getStatus());
             messageRepository.save(newMsg);
