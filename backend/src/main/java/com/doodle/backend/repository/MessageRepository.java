@@ -11,6 +11,6 @@ import java.util.UUID;
 @Repository
 public interface MessageRepository extends JpaRepository<Message, UUID> {
 
-    @Query("SELECT a FROM Message a ORDER BY a.timestamp DESC")
-    List<Message> findAllOrderByTimestampDesc();
+    @Query(nativeQuery = true, value = "SELECT TOP 1 * FROM Message a order by a.timestamp desc")
+    Message findAllOrderByTimestampDesc();
 }
