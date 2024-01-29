@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS MESSAGE
+(
+    ID            INT not null
+    primary key,
+    SENDER_NAME   VARCHAR(255),
+    RECEIVER_NAME VARCHAR(255),
+    MESSAGE       VARCHAR(255),
+    TIMESTAMP     TIMESTAMP,
+    STATUS        VARCHAR(255)
+    );
+
