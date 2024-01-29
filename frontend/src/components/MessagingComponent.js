@@ -136,7 +136,6 @@ const MessagingComponent = () => {
                                     {chat.senderName !== userData.username && <div className="avatar">{chat.senderName}</div>}
                                     <div className="message-data">{chat.message}</div>
                                     {chat.senderName === userData.username && <div className="avatar self">{chat.senderName}</div>}
-                                    <div className="message-data">{chat.timestamp}</div>
                                 </li>
                             ))}
                         </ul>
